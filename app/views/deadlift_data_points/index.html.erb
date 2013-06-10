@@ -1,0 +1,21 @@
+<h1>Listing deadlift_data_points</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @deadlift_data_points.each do |deadlift_data_point| %>
+  <tr>
+    <td><%= link_to 'Show', deadlift_data_point %></td>
+    <td><%= link_to 'Edit', edit_deadlift_data_point_path(deadlift_data_point) %></td>
+    <td><%= link_to 'Destroy', deadlift_data_point, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Deadlift data point', new_deadlift_data_point_path %>
