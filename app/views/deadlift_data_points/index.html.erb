@@ -11,7 +11,7 @@ div#deadlift_container {
 <h1>Graph of Deadlift Weight</h1> <%= image_tag("deadlift.svg", :size => "150x150")%>
 
 <button id="deadlift_button">
-  Button
+  Update
 </button>
 <div id="deadlift_container">
   <svg id="image">
@@ -28,18 +28,15 @@ div#deadlift_container {
   </tr>
 
 <% @deadlift_data_points.each do |deadlift_data_point| %>
-<% if (l deadlift_data_point['created_at'], :format => '%b %d') ==
-  (l Time.now, :format => '%b %d')%>
-  <tr>
-    <td></td>
-    <td><%= link_to 'Edit', edit_deadlift_data_point_path(deadlift_data_point) %></td>
-    <td><%= link_to 'Destroy', deadlift_data_point, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-  <% end %>
   <tr>
     <td><%= deadlift_data_point['user_id'] %></td>
     <td><%= deadlift_data_point['data_point']%></td>
     <td><%= l deadlift_data_point['created_at'], :format => '%b %d' %></td>
+    <% if (l deadlift_data_point['created_at'], :format => '%b %d') ==
+      (l Time.now, :format => '%b %d')%>
+        <td><%= link_to 'Edit', edit_deadlift_data_point_path(deadlift_data_point) %></td>
+        <td><%= link_to 'Destroy', deadlift_data_point, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
   </tr>
 <% end %>
 </table>
