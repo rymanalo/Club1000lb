@@ -4,7 +4,7 @@ class DeadliftDataPointsController < ApplicationController
   # GET /deadlift_data_points
   # GET /deadlift_data_points.json
   def index
-    @deadlift_data_points = DeadliftDataPoint.all
+    @deadlift_data_points = DeadliftDataPoint.where("user_id = '#{current_user.id}'")
 
     respond_to do |format|
       format.html # index.html.erb

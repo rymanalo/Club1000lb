@@ -1,3 +1,23 @@
+<style>
+div#container {
+  width: 400px;
+  height: 300px;
+  background-color: #eeeeee;
+}
+</style>
+
+
+
+<h1>Graph of Deadlift Weight</h1>
+
+<button id="button">
+  Button
+</button>
+<div id="container">
+  <svg id="image">
+  </svg>
+</div>
+
 <h1>Listing deadlift_data_points</h1>
 
 <table>
@@ -8,11 +28,15 @@
   </tr>
 
 <% @deadlift_data_points.each do |deadlift_data_point| %>
+<% if (l deadlift_data_point['created_at'], :format => '%b %d') ==
+  (l Time.now, :format => '%b %d')%>
   <tr>
-    <td><%= link_to 'Show', deadlift_data_point %></td>
+    <!-- <td><%= link_to 'Show', deadlift_data_point %></td> -->
+    <td></td>
     <td><%= link_to 'Edit', edit_deadlift_data_point_path(deadlift_data_point) %></td>
     <td><%= link_to 'Destroy', deadlift_data_point, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
+  <% end %>
   <tr>
     <td><%= deadlift_data_point['user_id'] %></td>
     <td><%= deadlift_data_point['data_point']%></td>
