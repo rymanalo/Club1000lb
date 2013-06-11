@@ -1,4 +1,6 @@
 class DeadliftDataPointsController < ApplicationController
+  before_filter :authenticate_user!
+
   # GET /deadlift_data_points
   # GET /deadlift_data_points.json
   def index
