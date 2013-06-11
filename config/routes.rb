@@ -1,4 +1,7 @@
 Club1000lb::Application.routes.draw do
+  resources :squat_data_points
+
+
   resources :deadlift_data_points
 
 

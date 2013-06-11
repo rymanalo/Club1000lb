@@ -66,15 +66,17 @@ setTimeout(function() {
       .attr("d", deadlift_lineFunction(deadliftData));
 
 
-    deadlift_button.onclick = function () {
-      deadlift_svg.append('path')
-        .transition()
-        .duration(1000)
-        .style("fill", "none")
-        .style("stroke", "#4180f3")
-        .style("stroke-width", 5)
-        .attr("d", deadlift_lineFunction( deadliftUpdatedData ));
-        this.onclick=null;
-    };
+    if(deadlift_button !== null){
+      deadlift_button.onclick = function () {
+        deadlift_svg.append('path')
+          .transition()
+          .duration(1000)
+          .style("fill", "none")
+          .style("stroke", "#4180f3")
+          .style("stroke-width", 5)
+          .attr("d", deadlift_lineFunction( deadliftUpdatedData ));
+          this.onclick=null;
+      };
+    }
   });
 }, 100);

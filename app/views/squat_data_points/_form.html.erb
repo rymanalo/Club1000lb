@@ -1,10 +1,10 @@
-<%= form_for(@deadlift_data_point) do |f| %>
-  <% if @deadlift_data_point.errors.any? %>
+<%= form_for(@squat_data_point) do |f| %>
+  <% if @squat_data_point.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@deadlift_data_point.errors.count, "error") %> prohibited this deadlift_data_point from being saved:</h2>
+      <h2><%= pluralize(@squat_data_point.errors.count, "error") %> prohibited this squat_data_point from being saved:</h2>
 
       <ul>
-      <% @deadlift_data_point.errors.full_messages.each do |msg| %>
+      <% @squat_data_point.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
