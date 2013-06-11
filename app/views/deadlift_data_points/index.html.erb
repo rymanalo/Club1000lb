@@ -8,7 +8,7 @@ div#container {
 
 
 
-<h1>Graph of Deadlift Weight</h1>
+<h1>Graph of Deadlift Weight</h1> <%= image_tag("deadlift.svg", :size => "150x150")%>
 
 <button id="button">
   Button
@@ -31,7 +31,6 @@ div#container {
 <% if (l deadlift_data_point['created_at'], :format => '%b %d') ==
   (l Time.now, :format => '%b %d')%>
   <tr>
-    <!-- <td><%= link_to 'Show', deadlift_data_point %></td> -->
     <td></td>
     <td><%= link_to 'Edit', edit_deadlift_data_point_path(deadlift_data_point) %></td>
     <td><%= link_to 'Destroy', deadlift_data_point, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -48,3 +47,6 @@ div#container {
 <br />
 
 <%= link_to 'New Deadlift data point', new_deadlift_data_point_path %>
+
+
+
