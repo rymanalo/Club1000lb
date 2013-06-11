@@ -2,9 +2,9 @@
 
 <table>
   <tr>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>User Id</th>
+    <th>Lbs</th>
+    <th>Date</th>
   </tr>
 
 <% @deadlift_data_points.each do |deadlift_data_point| %>
@@ -12,6 +12,11 @@
     <td><%= link_to 'Show', deadlift_data_point %></td>
     <td><%= link_to 'Edit', edit_deadlift_data_point_path(deadlift_data_point) %></td>
     <td><%= link_to 'Destroy', deadlift_data_point, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+  <tr>
+    <td><%= deadlift_data_point['user_id'] %></td>
+    <td><%= deadlift_data_point['data_point']%></td>
+    <td><%= l deadlift_data_point['created_at'], :format => '%b %d' %></td>
   </tr>
 <% end %>
 </table>

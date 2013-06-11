@@ -7,6 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header>
+    <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
+  </header>
 
   <p class="notice"><%= notice %></p>   <!--#Devise configuration-->
   <p class="alert"><%= alert %></p>     <!--#Devise configuration-->
