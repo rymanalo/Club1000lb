@@ -1,4 +1,7 @@
 Club1000lb::Application.routes.draw do
+  resources :bench_press_data_points
+
+
   resources :squat_data_points
 
 

@@ -9,7 +9,8 @@ class Club1000lbController < ApplicationController
     squat_data_points = SquatDataPoint.where("user_id = '#{current_user.id}'")
     @max_squat = (squat_data_points.map {|point| point['data_point']}).max
 
-
+    bench_press_data_points = BenchPressDataPoint.where("user_id = '#{current_user.id}'")
+    @max_bench_press = (bench_press_data_points.map {|point| point['data_point']}).max
   end
 
 end

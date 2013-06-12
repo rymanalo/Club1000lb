@@ -1,0 +1,24 @@
+<%= form_for(@bench_press_data_point) do |f| %>
+  <% if @bench_press_data_point.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bench_press_data_point.errors.count, "error") %> prohibited this bench_press_data_point from being saved:</h2>
+
+      <ul>
+      <% @bench_press_data_point.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.hidden_field :user_id, {:value => current_user.id} %>
+  </div>
+  <div class="field">
+    <%= f.label :data_point %><br />
+    <%= f.number_field :data_point %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
