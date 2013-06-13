@@ -3,7 +3,7 @@ bench_press_data_points = undefined
 $(document).ready ->
 
   $.ajax(
-   url: '/deadlift_data_points.json'
+   url: '/bench_press_data_points.json'
    method: 'get',
    dataType: 'json',
    success: (data) ->

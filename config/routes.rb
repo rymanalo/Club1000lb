@@ -12,4 +12,6 @@ Club1000lb::Application.routes.draw do
 
   root :to => 'club1000lb#index'
 
+  get '/index' => 'club1000lb#index'
+
 end

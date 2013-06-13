@@ -7,3 +7,30 @@
 <%= link_to 'Deadlift Graph', deadlift_data_points_path %> Max: <%= @max_deadlift %> </br>
 <%= link_to 'Squat Graph', squat_data_points_path %> Max: <%= @max_squat %> </br>
 <%= link_to 'Bench Press Graph', bench_press_data_points_path %> Max: <%= @max_bench_press %>
+
+<% if @current_total_max >= 1000 %>
+<style>
+  body {
+    background-size: 200px 200px;
+    background-color: #1c76ff;
+    color: #000000;
+    font-size: 20px;
+    line-height: 25pt;
+  }
+
+  a {
+    font-weight: bolder;
+  }
+</style>
+<h1> WOOOOO ONE THOOOOOOOOOOOUUUUUUUSAND!!!</h1>
+<img src="http://weknowmemes.com/wp-content/uploads/2013/01/how-are-you-so-strong.jpg">
+<img src='http://www.picgifs.com/sport-graphics/sport-graphics/bodybuilding/sport-graphics-bodybuilding-804659.gif' style="height: 300px; width: 300px;">
+<% end %>
+
+<div id="indexMorris" style="height: 300px;"></div>
+
+<% if @current_total_max >= 1000 %>
+<%= image_tag("deadlift.svg", :size => "250x250")%>
+<%= image_tag("squat.svg", :size => "250x250")%>
+<%= image_tag("benchpress.svg", :size => "250x250")%>
+<% end %>
