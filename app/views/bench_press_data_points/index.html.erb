@@ -1,36 +1,16 @@
-<style>
-
-div#bench_press_container {
-  width: 400px;
-  height: 300px;
-  background-color: #eeeeee;
-}
-</style>
-
-
-
 <h1>Graph of Bench Press Weight</h1> <%= image_tag("benchpress.svg", :size => "150x150")%>
 
-<button id="bench_press_button">
-  Update
-</button>
-<div id="bench_press_container">
-  <svg id="image">
-  </svg>
-</div>
 
 <h1>Listing bench_press_data_points</h1>
 
 <table>
   <tr>
-    <th>User Id</th>
     <th>Lbs</th>
     <th>Date</th>
   </tr>
 
 <% @bench_press_data_points.each do |bench_press_data_point| %>
   <tr>
-    <td><%= bench_press_data_point['user_id'] %></td>
     <td><%= bench_press_data_point['data_point']%></td>
     <td><%= l bench_press_data_point['created_at'], :format => '%b %d' %></td>
     <% if (l bench_press_data_point['created_at'], :format => '%b %d') ==
@@ -43,8 +23,12 @@ div#bench_press_container {
 </table>
 
 <br />
-
+<% if (@bench_press_data_points == []) || (@bench_press_data_points.last['created_at'].strftime("%Y-%m-%d") == (Time.now).strftime("%Y-%m-%d")) %>
 <%= link_to 'New Bench Press data point', new_bench_press_data_point_path %>
+<% end %>
+
+<br />
+
 
 </br>
 <a href="http://thenounproject.com/noun/bench-press/#icon-No4716" target="_blank">Bench Press</a> designed by <a href="http://thenounproject.com/Bendoh" target="_blank">Ben Doherty</a> from The Noun Project

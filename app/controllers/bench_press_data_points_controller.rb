@@ -15,12 +15,13 @@ class BenchPressDataPointsController < ApplicationController
   # GET /bench_press_data_points/1
   # GET /bench_press_data_points/1.json
   def show
-    @bench_press_data_point = BenchPressDataPoint.find(params[:id])
+    redirect_to :action => "index"
+    # @bench_press_data_point = BenchPressDataPoint.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @bench_press_data_point }
-    end
+    # respond_to do |format|
+    #   format.html # show.html.erb
+    #   format.json { render json: @bench_press_data_point }
+    # end
   end
 
   # GET /bench_press_data_points/new

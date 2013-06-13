@@ -4,13 +4,13 @@ class Club1000lbController < ApplicationController
 
   def index
     deadlift_data_points = DeadliftDataPoint.where("user_id = '#{current_user.id}'")
-    @max_deadlift = (deadlift_data_points.map {|point| point['data_point']}).max
+    @max_deadlift = (deadlift_data_points.map {|point| point['data_point']}).max || 0
 
     squat_data_points = SquatDataPoint.where("user_id = '#{current_user.id}'")
-    @max_squat = (squat_data_points.map {|point| point['data_point']}).max
+    @max_squat = (squat_data_points.map {|point| point['data_point']}).max || 0
 
     bench_press_data_points = BenchPressDataPoint.where("user_id = '#{current_user.id}'")
-    @max_bench_press = (bench_press_data_points.map {|point| point['data_point']}).max
+    @max_bench_press = (bench_press_data_points.map {|point| point['data_point']}).max || 0
   end
 
 end

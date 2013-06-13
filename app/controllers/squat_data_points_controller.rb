@@ -15,12 +15,13 @@ class SquatDataPointsController < ApplicationController
   # GET /squat_data_points/1
   # GET /squat_data_points/1.json
   def show
-    @squat_data_point = SquatDataPoint.find(params[:id])
+    redirect_to :action => "index"
+    # @squat_data_point = SquatDataPoint.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @squat_data_point }
-    end
+    # respond_to do |format|
+    #   format.html # show.html.erb
+    #   format.json { render json: @squat_data_point }
+    # end
   end
 
   # GET /squat_data_points/new

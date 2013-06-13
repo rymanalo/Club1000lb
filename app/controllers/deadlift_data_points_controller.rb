@@ -15,12 +15,14 @@ class DeadliftDataPointsController < ApplicationController
   # GET /deadlift_data_points/1
   # GET /deadlift_data_points/1.json
   def show
-    @deadlift_data_point = DeadliftDataPoint.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @deadlift_data_point }
-    end
+    redirect_to :action => "index"
+    # @deadlift_data_point = DeadliftDataPoint.find(params[:id])
+
+    # respond_to do |format|
+    #   format.html # show.html.erb
+    #   format.json { render json: @deadlift_data_point }
+    # end
   end
 
   # GET /deadlift_data_points/new
