@@ -1,8 +1,8 @@
 <h1>Hello <%= current_user.email %></h1>
 
 
-<h2>Total: <%= @max_deadlift+ @max_squat + @max_bench_press  %> lbs</h2>
-<h2><%= 1000 - (@max_deadlift+ @max_squat + @max_bench_press)  %>lbs to go!</h2>
+<h2>Total: <%= @total_max  %> lbs</h2>
+<h2><%= 1000 - @total_max %>lbs to go!</h2>
 
 <%= link_to 'Deadlift Graph', deadlift_data_points_path %> Max: <%= @max_deadlift %> </br>
 <%= link_to 'Squat Graph', squat_data_points_path %> Max: <%= @max_squat %> </br>

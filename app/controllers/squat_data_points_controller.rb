@@ -5,6 +5,7 @@ class SquatDataPointsController < ApplicationController
   # GET /squat_data_points.json
   def index
     @squat_data_points = SquatDataPoint.where("user_id = '#{current_user.id}'")
+    @max_squat = (@squat_data_points.map {|point| point['weight']}).max || 0
 
     respond_to do |format|
       format.html # index.html.erb

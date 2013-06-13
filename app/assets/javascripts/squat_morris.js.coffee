@@ -1,16 +1,16 @@
-deadlift_datapoints = undefined
+squat_datapoints = undefined
 
 $(document).ready ->
 
   $.ajax(
-   url: '/deadlift_data_points.json'
+   url: '/squat_data_points.json'
    method: 'get',
    dataType: 'json',
    success: (data) ->
-    deadlift_datapoints = data
+    squat_datapoints = data
     Morris.Line(
-      element: 'deadliftMorris'
-      data: deadlift_datapoints
+      element: 'squatMorris'
+      data: squat_datapoints
       xkey: 'date'
       ykeys: ['weight']
       labels: ['weight']

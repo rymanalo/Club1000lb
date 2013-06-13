@@ -1,4 +1,4 @@
-deadlift_datapoints = undefined
+bench_press_data_points = undefined
 
 $(document).ready ->
 
@@ -7,10 +7,10 @@ $(document).ready ->
    method: 'get',
    dataType: 'json',
    success: (data) ->
-    deadlift_datapoints = data
+    bench_press_data_points = data
     Morris.Line(
-      element: 'deadliftMorris'
-      data: deadlift_datapoints
+      element: 'benchPressMorris'
+      data: bench_press_data_points
       xkey: 'date'
       ykeys: ['weight']
       labels: ['weight']

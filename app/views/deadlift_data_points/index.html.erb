@@ -1,29 +1,17 @@
+<h1>Deadlift</h1>
+<%= image_tag("deadlift.svg", :size => "#{@max_deadlift/2}x#{@max_deadlift/2}")%>
 
-<h1>Graph of Deadlift Weight</h1> <%= image_tag("deadlift.svg", :size => "150x150")%>
+<div id="deadliftMorris" style="height: 300px; display: inline-block;"></div>
 
-<div id="deadliftMorris" style="height: 300px;"></div>
-
-<table>
-  <tr>
-    <th>Lbs</th>
-    <th>Date</th>
-  </tr>
-
-  <% if (@deadlift_data_points != []) && (@deadlift_data_points.last['date'] == (Time.now).strftime("%Y-%m-%d")) %>
-
-    <tr>
-      <td><%= @deadlift_data_points.last['weight']%></td>
-      <td><%=(l Time.now, :format => '%b %d') %></td>
-      <% if @deadlift_data_points.last['date'] == (l Time.now, :format => '%Y-%m-%d')%>
-          <td><%= link_to 'Edit', edit_deadlift_data_point_path(@deadlift_data_points.last) %></td>
-          <td><%= link_to 'Destroy', @deadlift_data_points.last, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-    </tr>
-
-  <% end %>
-
-
-</table>
+<br />
+<br />
+Today is <%=(l Time.now, :format => '%A, %B %d') %>.
+<br />
+<% if (@deadlift_data_points != []) && (@deadlift_data_points.last['date'] == (Time.now).strftime("%Y-%m-%d")) %>
+  <%= link_to 'Edit', edit_deadlift_data_point_path(@deadlift_data_points.last) %> or
+  <%= link_to 'Delete', @deadlift_data_points.last, method: :delete, data: { confirm: 'Are you sure?' } %>
+  newly created weight of <%= @deadlift_data_points.last['weight']%> lbs.
+<% end %>
 
 <br />
 

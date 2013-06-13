@@ -1,36 +1,25 @@
-<h1>Graph of Squat Weight</h1> <%= image_tag("squat.svg", :size => "150x150")%>
+<h1>Squat</h1>
+<%= image_tag("squat.svg", :size => "#{@max_squat/2}x#{@max_squat/2}")%>
 
+<div id="squatMorris" style="height: 300px; display: inline-block;"></div>
 
-<h1>Listing squat_data_points</h1>
-
-<table>
-  <tr>
-    <th>User Id</th>
-    <th>Lbs</th>
-    <th>Date</th>
-  </tr>
-
-<% @squat_data_points.each do |squat_data_point| %>
-  <tr>
-    <td><%= squat_data_point['user_id'] %></td>
-    <td><%= squat_data_point['weight']%></td>
-    <td><%= l squat_data_point['created_at'], :format => '%b %d' %></td>
-    <% if (l squat_data_point['created_at'], :format => '%b %d') ==
-      (l Time.now, :format => '%b %d')%>
-        <td><%= link_to 'Edit', edit_squat_data_point_path(squat_data_point) %></td>
-        <td><%= link_to 'Destroy', squat_data_point, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      <% end %>
-  </tr>
-<% end %>
-</table>
-
-<% if (@squat_data_points == []) || (@squat_data_points.last['date'] == (Time.now).strftime("%Y-%m-%d")) %>
-<%= link_to 'New Squat data point', new_squat_data_point_path %>
+<br />
+<br />
+Today is <%=(l Time.now, :format => '%A, %B %d') %>.
+<br />
+<% if (@squat_data_points != []) && (@squat_data_points.last['date'] == (Time.now).strftime("%Y-%m-%d")) %>
+  <%= link_to 'Edit', edit_squat_data_point_path(@squat_data_points.last) %> or
+  <%= link_to 'Delete', @squat_data_points.last, method: :delete, data: { confirm: 'Are you sure?' } %>
+  newly created weight of <%= @squat_data_points.last['weight']%> lbs.
 <% end %>
 
 <br />
 
+<% if (@squat_data_points == []) || (@squat_data_points.last['date'] != (Time.now).strftime("%Y-%m-%d")) %>
+<%= link_to 'New Deadlift data point', new_squat_data_point_path %>
+<% end %>
 
+<br />
 
 </br>
 <a href="http://thenounproject.com/noun/squat/#icon-No4714" target="_blank">Squat</a> designed by <a href="http://thenounproject.com/Bendoh" target="_blank">Ben Doherty</a> from The Noun Project
