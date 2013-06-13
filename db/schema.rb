@@ -11,30 +11,30 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130613082436) do
+ActiveRecord::Schema.define(:version => 20130613082912) do
 
   create_table "bench_press_data_points", :force => true do |t|
     t.integer  "user_id"
-    t.integer  "data_point"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "date"
+    t.integer  "weight"
   end
 
   create_table "deadlift_data_points", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "user_id"
-    t.integer  "data_point"
     t.string   "date"
+    t.integer  "weight"
   end
 
   create_table "squat_data_points", :force => true do |t|
     t.integer  "user_id"
-    t.integer  "data_point"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "date"
+    t.integer  "weight"
   end
 
   create_table "users", :force => true do |t|

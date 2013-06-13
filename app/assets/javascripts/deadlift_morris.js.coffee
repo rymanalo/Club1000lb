@@ -12,8 +12,8 @@ $(document).ready ->
       element: 'deadliftMorris'
       data: datapoints
       xkey: 'date'
-      ykeys: ['data_point']
-      labels: ['data_point']
+      ykeys: ['weight']
+      labels: ['weight']
       xLabels: "day"
       parseTime: false
       postUnits: " lbs"

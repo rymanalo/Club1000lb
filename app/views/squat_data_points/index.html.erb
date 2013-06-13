@@ -13,7 +13,7 @@
 <% @squat_data_points.each do |squat_data_point| %>
   <tr>
     <td><%= squat_data_point['user_id'] %></td>
-    <td><%= squat_data_point['data_point']%></td>
+    <td><%= squat_data_point['weight']%></td>
     <td><%= l squat_data_point['created_at'], :format => '%b %d' %></td>
     <% if (l squat_data_point['created_at'], :format => '%b %d') ==
       (l Time.now, :format => '%b %d')%>

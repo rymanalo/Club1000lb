@@ -12,7 +12,7 @@
   <% if (@deadlift_data_points != []) && (@deadlift_data_points.last['date'] == (Time.now).strftime("%Y-%m-%d")) %>
 
     <tr>
-      <td><%= @deadlift_data_points.last['data_point']%></td>
+      <td><%= @deadlift_data_points.last['weight']%></td>
       <td><%=(l Time.now, :format => '%b %d') %></td>
       <% if @deadlift_data_points.last['date'] == (l Time.now, :format => '%Y-%m-%d')%>
           <td><%= link_to 'Edit', edit_deadlift_data_point_path(@deadlift_data_points.last) %></td>
@@ -32,8 +32,6 @@
 <% end %>
 
 <br />
-
-
 
 </br>
 <a href="http://thenounproject.com/noun/deadlift/#icon-No4713" target="_blank">Deadlift</a> designed by <a href="http://thenounproject.com/Bendoh" target="_blank">Ben Doherty</a> from The Noun Project
