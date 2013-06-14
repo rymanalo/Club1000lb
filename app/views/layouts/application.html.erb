@@ -18,10 +18,12 @@
 <body>
   <header>
     <div id="header" class="navbar navbar-fixed-top">
-    <span id="home"><a href="/" id="logo">Club <em id="logo_num">1000</em> Lbs</a><span>
-    <% if user_signed_in?%>
-     <span id="sign_out"><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %><span>
-    <% end %>
+      <a href="/" id="logo">Club <em id="logo_num">1000</em> Lbs</a>
+      <div>
+        <% if user_signed_in?%>
+         <span id="sign_out"><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %><span>
+        <% end %>
+       </div>
   </div>
   </header>
 

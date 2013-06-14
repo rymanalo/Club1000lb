@@ -25,5 +25,7 @@ $(document).ready ->
       gridTextColor: '#68f'
       ymax: 1000
       gridTextSize: 15
+      barColors: ['#0a89ff', '#279b27']
+      gridTextFamily: 'Roboto Slab';
     )
   )

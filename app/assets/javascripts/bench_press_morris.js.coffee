@@ -25,5 +25,7 @@ $(document).ready ->
       pointStrokeColors: 'gold'
       hideHover: true
       gridTextColor: '#68f'
+      gridTextFamily: 'Roboto Slab'
+      gridTextSize: 14
     )
   )

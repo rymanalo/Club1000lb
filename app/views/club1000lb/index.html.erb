@@ -4,11 +4,11 @@
 <h4>Total: <%= @total_max  %> lbs</h2>
 <h4><%= 1000 - @total_max %>lbs to go!</h4>
 
-<%= link_to 'Deadlift Graph', deadlift_data_points_path %></br>
+<%= link_to 'Deadlift', deadlift_data_points_path %></br>
 Max: <%= @max_deadlift %> </br>
-<%= link_to 'Squat Graph', squat_data_points_path %></br>
+<%= link_to 'Squat', squat_data_points_path %></br>
 Max: <%= @max_squat %> </br>
-<%= link_to 'Bench Press Graph', bench_press_data_points_path %></br>
+<%= link_to 'Bench Press', bench_press_data_points_path %></br>
 Max: <%= @max_bench_press %>
 
 <% if @current_total_max >= 1000 %>
