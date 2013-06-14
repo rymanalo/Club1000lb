@@ -27,5 +27,6 @@ $(document).ready ->
       gridTextColor: '#68f'
       gridTextFamily: 'Roboto Slab'
       gridTextSize: 14
+      ymin: 0
     )
   )
