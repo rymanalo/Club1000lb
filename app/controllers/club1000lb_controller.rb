@@ -1,5 +1,5 @@
 class Club1000lbController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :except => [:welcome]
 
 
 
@@ -27,6 +27,12 @@ class Club1000lbController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @current_total_max_hash }
+    end
+  end
+
+  def welcome
+    if user_signed_in?
+      redirect_to :action => "index"
     end
   end
 

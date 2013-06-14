@@ -16,7 +16,7 @@ Today is <%=(l Time.now, :format => '%A, %B %d') %>.
 <br />
 
 <% if (@deadlift_data_points == []) || (@deadlift_data_points.last['date'] != (Time.now).strftime("%Y-%m-%d")) %>
-<span class="new"><%= link_to 'Add Deadlift data point', new_deadlift_data_point_path %></span>
+<span class="new"><%= link_to 'Add New Deadlift Amount', new_deadlift_data_point_path %></span>
 <% end %>
 <br />
 <br />

@@ -16,7 +16,7 @@ Today is <%=(l Time.now, :format => '%A, %B %d') %>.
 <br />
 
 <% if (@squat_data_points == []) || (@squat_data_points.last['date'] != (Time.now).strftime("%Y-%m-%d")) %>
-<span class="new"><%= link_to 'Add Squat data point', new_squat_data_point_path %><span>
+<span class="new"><%= link_to 'Add New Squat Amount', new_squat_data_point_path %><span>
 <% end %>
 <br />
 <br />
