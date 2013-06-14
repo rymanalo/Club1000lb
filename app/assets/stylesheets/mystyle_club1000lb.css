@@ -1,3 +1,46 @@
-button {
-  color: rgba(255, 255, 255, 0.75);
+body {
+  padding-top: 60px;
+  text-align: center;
+  background-color: #daebff;
+  color: #4ec948;
+}
+
+h1, h2, h3, h4 {
+  color: #0f4697;
+}
+
+#header {
+  height: 50px;
+  background: #2d437f;
+  font-size: 30px;
+  padding-top:20px;
+}
+
+
+#header #home a {
+  color: #9f8f34;
+  font-size: 30px;
+  &:visited {
+    color: #9f8f34;
+  }
+  &:hover {
+    color: #fff;
+    background-color: #000;
+  }
+}
+
+#header #sign_out a {
+  color: #9f8f34;
+  font-size: 15px;
+  &:visited {
+    color: #9f8f34;
+  }
+  &:hover {
+    color: #fff;
+    background-color: #000;
+  }
+}
+
+em {
+  font-size: 45px;
 }

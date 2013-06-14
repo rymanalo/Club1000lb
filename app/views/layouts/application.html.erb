@@ -13,10 +13,12 @@
 </head>
 <body>
   <header>
-    <%= link_to "Home", root_path %>
+    <div id="header" class="navbar navbar-fixed-top">
+    <span id="home"><a href="/">Club <em>1000</em>Lbs</a><span>
     <% if user_signed_in?%>
-     <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
+     <span id="sign_out"><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %><span>
     <% end %>
+  </div>
   </header>
 
   <p><%= notice %></p>   <!--#Devise configuration-->
