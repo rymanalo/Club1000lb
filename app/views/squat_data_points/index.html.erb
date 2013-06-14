@@ -16,8 +16,16 @@ Today is <%=(l Time.now, :format => '%A, %B %d') %>.
 <br />
 
 <% if (@squat_data_points == []) || (@squat_data_points.last['date'] != (Time.now).strftime("%Y-%m-%d")) %>
-<%= link_to 'New Deadlift data point', new_squat_data_point_path %>
+<%= link_to 'New Squat data point', new_squat_data_point_path %>
 <% end %>
+<br />
+<br />
+<a href="http://www.bodybuilding.com/exercises/detail/view/name/barbell-squat" target="_blank"> Learn from BodyBuilding.com </a>
+<br />
+
+Watch the highest viewed YouTube video for "squat"
+<br/>
+<iframe width="420" height="315" src="http://www.youtube.com/embed/7mqSqwGJAMg" frameborder="0" allowfullscreen></iframe>
 
 <br />
 
