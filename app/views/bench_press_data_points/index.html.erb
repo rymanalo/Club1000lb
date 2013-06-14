@@ -16,8 +16,9 @@ Today is <%=(l Time.now, :format => '%A, %B %d') %>.
 <br />
 
 <% if (@bench_press_data_points == []) || (@bench_press_data_points.last['date'] != (Time.now).strftime("%Y-%m-%d")) %>
-<%= link_to 'New Deadlift data point', new_bench_press_data_point_path %>
+<span class="new"><%= link_to 'Add Bench Press data point', new_bench_press_data_point_path %><span>
 <% end %>
+<br />
 <br />
 <a href="http://www.bodybuilding.com/exercises/detail/view/name/barbell-bench-press-medium-grip" target="_blank"> Learn from BodyBuilding.com </a>
 <br />

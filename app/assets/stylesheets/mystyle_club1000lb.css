@@ -3,6 +3,7 @@ body {
   text-align: center;
   background-color: #daebff;
   color: #4ec948;
+  font-size: 15px;
 }
 
 h1, h2, h3, h4 {
@@ -20,9 +21,6 @@ h1, h2, h3, h4 {
 #header #home a {
   color: #9f8f34;
   font-size: 30px;
-  &:visited {
-    color: #9f8f34;
-  }
   &:hover {
     color: #fff;
     background-color: #000;
@@ -32,8 +30,6 @@ h1, h2, h3, h4 {
 #header #sign_out a {
   color: #9f8f34;
   font-size: 15px;
-  &:visited {
-    color: #9f8f34;
   }
   &:hover {
     color: #fff;
@@ -43,4 +39,8 @@ h1, h2, h3, h4 {
 
 em {
   font-size: 45px;
+}
+
+.new a{
+  color: #f00;
 }
