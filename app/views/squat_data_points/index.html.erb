@@ -1,4 +1,13 @@
 <h1>Squat</h1>
+
+<div>
+<h4>Record Max</h4>
+<h2><span class="num"><%= @max_squat  %></span></h2>
+<h4>Current Max</h4>
+<h2><span class="num"><%= @last_max_squat
+  %></span></h2>
+</div>
+
 <%= image_tag("squat.svg", :size => "#{@max_squat/2}x#{@max_squat/2}")%>
 
 <div id="squatMorris" style="height: 300px;"></div>

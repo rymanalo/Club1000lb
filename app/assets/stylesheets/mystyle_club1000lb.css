@@ -38,6 +38,10 @@ h1, h2, h3, h4 {
   font-size: 70px;
 }
 
+.num {
+  color: #9f8f34;
+}
+
 #header #sign_out a {
   color: #9f8f34;
   font-size: 15px;

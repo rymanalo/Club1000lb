@@ -6,6 +6,8 @@ class BenchPressDataPointsController < ApplicationController
   def index
     @bench_press_data_points = BenchPressDataPoint.where("user_id = '#{current_user.id}'")
     @max_bench_press = (@bench_press_data_points.map {|point| point['weight']}).max || 0
+    @last_max_bench_press = (@bench_press_data_points == []) ? 0 : @bench_press_data_points.last['weight']
+
 
     respond_to do |format|
       format.html # index.html.erb

@@ -6,6 +6,8 @@ class SquatDataPointsController < ApplicationController
   def index
     @squat_data_points = SquatDataPoint.where("user_id = '#{current_user.id}'")
     @max_squat = (@squat_data_points.map {|point| point['weight']}).max || 0
+    @last_max_squat = (@squat_data_points == []) ? 0 : @squat_data_points.last['weight']
+
 
     respond_to do |format|
       format.html # index.html.erb

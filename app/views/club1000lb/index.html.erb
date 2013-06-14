@@ -1,8 +1,9 @@
-<h3>Hello <%= current_user.email %></h3>
+<h3>Hey, <%= current_user.email %>!</h3>
+<h3>Lets go lift bro!</h3>
 
 
-<h4>Total: <%= @total_max  %> lbs</h2>
-<h4><%= 1000 - @total_max %>lbs to go!</h4>
+<h4>Total: <span class="num"><%= @total_max  %></span> lbs</h2>
+<h4><span class="num"><%= 1000 - @total_max %></span>lbs to go!</h4>
 
 <%= link_to 'Deadlift', deadlift_data_points_path %></br>
 Max: <%= @max_deadlift %> </br>

@@ -6,6 +6,7 @@ class DeadliftDataPointsController < ApplicationController
   def index
     @deadlift_data_points = DeadliftDataPoint.where("user_id = '#{current_user.id}'")
     @max_deadlift = (@deadlift_data_points.map {|point| point['weight']}).max || 0
+    @last_max_deadlift = (@deadlift_data_points == []) ? 0 : @deadlift_data_points.last['weight']
 
     respond_to do |format|
       format.html # index.html.erb
